@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8" />
+    <style>
+
+
+        * {
+            margin: 50px 30px 50px 70px;
+            padding: 0;
+        }
+
+        table {
+            margin-top: 4px;
+            display: inline-block;
+            background: linear-gradient(red,gray);
+            background-repeat: no-repeat;
+            box-shadow: 2px 2px 5px black;
+            position: relative;
+            border: medium;
+            border-block-color: aqua;
+        }
+
+        .t1 {
+            display:block;
+            background: linear-gradient(red,gray);
+        }
+
+            .t1 td:hover {
+                background: linear-gradient(skyblue,white,red);
+                color: red;
+            }
+
+        #hiu :hover {
+            background-color: aquamarine;
+            color: blue;
+        }
+
+
+        .t2:active {
+            background: linear-gradient(black,white);
+        }
+
+        #ms:hover {
+            background: linear-gradient(black,darkgreen);
+            color: aliceblue;
+        }
+        .t3:hover {
+            background: linear-gradient(black,darkgreen);
+            color: aliceblue;
+        }
+
+        .t3 {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <table class="t1" border="1" width="30%" height="20%" align="center">
+        <tr align="center">
+            <td colspan="5">1</td>
+            <td rowspan="5">2</td>
+            <td rowspan="5">3</td>
+            <td rowspan="5" colspan="2" width="20px">4</td>
+
+            <td rowspan="3">C6</td>
+            <td rowspan="3">C7</td>
+            <td rowspan="3">C8</td>
+            <td rowspan="3">C9</td>
+        </tr>
+        <tr align="center">
+            <td>B1</td>
+            <td>B2</td>
+            <td colspan="2">B3</td>
+            <td>B4</td>
+        </tr>
+        <tr align="center">
+            <td rowspan="5">
+                <table border="2" id="hiu">
+                    <tr><td>h</td></tr>
+                    <tr><td>i</td></tr>
+                    <tr><td>u</td></tr>
+
+                </table>
+            </td>
+            <td rowspan="5">C2</td>
+            <td rowspan="5">C3</td>
+            <td rowspan="5">C4</td>
+            <td colspan="1">C5</td>
+
+        </tr>
+        <tr align="center">
+            <td rowspan="2">d1</td>
+            <td>d2</td>
+            <td>d3</td>
+            <td>d4</td>
+            <td>d5</td>
+        </tr>
+        <tr align="center">
+            <td>d2</td>
+            <td>d3</td>
+            <td colspan="1">d4</td>
+            <td rowspan="2">d5</td>
+        </tr>
+        <tr align="center">
+            <td>d1</td>
+            <td rowspan="2">d2</td>
+            <td>d3</td>
+            <td colspan="3">d4</td>
+            <td id="ms" colspan="2">d5</td>
+        </tr>
+        <tr align="center">
+            <td>d1</td>
+            <td>d2</td>
+            <td colspan="3" align="center">d3</td>
+            <td colspan="2">d4</td>
+            <td>d5</td>
+        </tr>
+        <tr align="center">
+            <td>d1</td>
+            <td>d2</td>
+            <td>d3</td>
+            <td>d4</td>
+            <td align="center" colspan="9">d5</td>
+        </tr>
+    </table>
+    <table class="t2">
+        <tr>
+            <th>
+                <h1>hi</h1>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <h2>hello</h2>
+            </td>
+        </tr>
+    </table> <table class="t3">
+        <tr>
+            <th>
+                <h1>hi</h1>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <h2>hello</h2>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
