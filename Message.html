@@ -13,19 +13,43 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
-    .container{
+    .container1, .container2,.container3,.container4{
         width: 100vw;
-        height: 100vh;
+        height: 87vh;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: left;
-        background: linear-gradient(#193e5a,#8795a0);
-        color: #8795a0;
-        border-radius: 50px;
         font-size: x-large;
         border:2px solid black;
         flex-direction: column;
+    }
+    .container1{
+        background: linear-gradient(#193e5a,#8795a0);
+        color: #8795a0;
+    }
+    .container2{
+        display: none;
+        background: linear-gradient(#0c7074,#4c635f);
+        color: #021f1b;
+    }
+    .container3{
+        display: none;
+        background: linear-gradient(#2d7cb1,#848699);
+        color: #4ba0d8;
+    }
+    
+    .container4{
+        display: none;
+        background: linear-gradient(#66380e,#523413);
+        color: #778026;
+    }
+    #btnglow{
+        box-shadow: 0 0 5px cyan,0 0 25px cyan;
+    }
+    #btnglow:hover{
+        box-shadow: 0 0 5px cyan,0 0 25px cyan,
+        0 0 50px cyan , 0 0 100px cyan, 0 0 200px cyan;
     }
     button{
         width:400px;
@@ -34,7 +58,7 @@
         border:2px solid white;
         border-radius: 5px;
     }
-    button:hover{
+    #btn1:hover,#btn2:hover,#btn3:hover{
         background-color: rgb(4, 49, 49);
         border:2px solid rgb(99, 53, 173);
         border-radius: 5px;
@@ -44,89 +68,218 @@
         height: 30px;
 
     }
-input{
-    width: 400px;
-}
-.content{
-    color: aquamarine;
-}
-#name{
-    flex-direction: row;
-}
+    input{
+        width: 400px;
+    }
+    .content{
+        color: aquamarine;
+        text-align: center;
+    }
+    #name{
+        flex-direction: row;
+    }
+    #refresh,#goBack,#content{
+        display: none;
+    }
+
+    .header, .footer{
+    text-align:center;
+    background: #001627;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    #home,#play,#inva,#logIn,#a,#b,#c,#d{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #txt{
+        padding: 40px;
+        color: aliceblue;
+    }
+    #add,#less{
+        text-align: center;
+        padding-left: 50px;
+        padding-right: 50px;
+        color: aliceblue;
+    }
+    #prod,#quan{
+        padding-left: 400px;
+    }
+    .rowFlex{
+        display: flex;
+        flex-direction: row;
+    }
     </style>
 </head>
 <body>
-    <div class="container">
+    <head>
+    <div class="header" >
+        <a href="#" id="logIn" onclick="logIn()">Log In</a>
+        <a href="#" id="home" onclick="homePage()">HOME</a>
+        <a href="#" id="play" onclick="play()">Play</a>
+        <a href="#" id="inva" onclick="inva()">INVALID</a>
+    </div>
+    </head> 
+    <div class="container1" id="container1" >
         <div class="verify" id="verify">
             <h5>Name :</h5>
-                <input type ="text" id="name" maxlength="10">
-            <label for="number">ID no. :<input type="text" placeholder="xx-xxxxx" id="num" maxlength="8"></label>
+                <input type ="text" id="name" maxlength="10" >
+            <label for="number">ID no. :
+                <input type="text" placeholder="xx-xxxxx" id="num" maxlength="8">
+            </label>
             <button onclick="deterMin()" id="btn1">Log In</button>
         </div>
 
-        <div class="content">
-            <div id="mss">
-                <h5></h5> 
+        <div class="content" id="content">
+            <div id="mss">dis is invi
             </div>
             <div id="msg">
-                <h5></h5> 
             </div>
-            <div id="context">
-                <h5> </h5>
+            <br>
+            <div id="refresh">
+                <button id="btn2"  onclick="rfsh()">Refresh</button>
             </div>
         </div>
         <div class="clarify">
-            <div id="invalid">
-                <h5></h5>
+            <div id="invalid"></div><br>
+            <div id="goBack">
+                <button id="btn3" onclick="goBack()">To the Home Page</button>
             </div>
+
+
         </div>
     </div>
+        <div class="container2"  id="container2">
+            <h1>Disclaimer :</h1>
+            <h3>This Website is for learning purpose of the owner only</h3>
+            <h3>I don't have an Intention to <b><i>copyright</b></i></h3>
+            <br>
+            <h4 >- FGJC</h4>
+        </div>
+        <div class="container3"  id="container3">
+            <div class="addLess" id="addLess">
+                <h3 id="prod">Product :</h3>
+                <p id="txt">      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse similique maiores soluta nam illo, labore voluptatum doloribus quaerat explicabo culpa pariatur dicta laudantium ullam voluptatem, quo ea qui nulla! Iste.</p>
+                <a href="#" id="add" onclick="add()" >+</a>
+                <a href="#" id="less" onclick="less()" >-</a>
+                <div class="rowFlex">
+                <h2  id="quan" > Product Quantity :      </h2>
+                <h2 id="quantity">0</h2>
+
+                </div>
+      
+            </div>
+        </div>
+        <div class="container4"  id="container4">
+            <button id="btnglow">Glowing Button</button>
+        </div>
+    <footer>
+        <div class="footer" >
+            <a href="#" id="logIn" onclick="logIn()">Log In</a>
+            <a href="#" id="home" onclick="homePage()">HOME</a>
+            <a href="#" id="play" onclick="play()">Play</a>
+            <a href="#" id="inva" onclick="inva()">INVALID</a>
+        </div>
+    </footer>
 <script>
+    var x = 0 ;
     var option = [
-        'fuck you','puta mo','wag kana magising','hayup ka',
-        'walang kwenta','tanga','inutil',
+        'number','letter','symbol','text','function key','shorcut key',
+        'hot key',
     ]
-    var x = document.getElementById('verify');
     var y = document.getElementById('name');
     const btn1 = document.getElementById('btn1');
     var num = document.getElementById('num');
     var id1 = ['23-80287','23-25214','23-23708','23-xxxxx'];
-    function changeDisplay(){
-        if(x.style.display === 'none'){
-    x.style.display = "flex";}
-    else{
-    x.style.display = "none";
+    function changeDisplay1(){
+        document.getElementById('verify').style.display='none';
+        document.getElementById('goBack').style.display='inline';
+        document.getElementById('invalid').style.display='inline';
+        document.getElementById('content').style.display='none';
 
     }
+    function changeDisplay0(){
+        document.getElementById('verify').style.display='none';  
+        document.getElementById('content').style.display='inline';
+        document.getElementById('goBack').style.display='inline';
+        document.getElementById('refresh').style.display='inline';
+   
     }
+    function changeDisplay2(){
+        document.getElementById('goBack').style.display='none';
+        document.getElementById('invalid').style.display='none';
+        document.getElementById('content').style.display='none';
+        document.getElementById('verify').style.display='inline';  
+      }
+    
+    
     function read(){
 
-    // alert('This Contains Simple Message');
     var rand1 = Math.floor(Math.random() * option.length)
-    var rand2 = Math.floor(Math.random() * option.length)
-   // document.getElementById('context').innerHTML = 'message here';
 
     document.getElementById('msg').innerHTML = option[rand1];
-    document.getElementById('context').innerHTML = option[rand2];
-    document.getElementById('mss').innerHTML = 'hello '+y.value+'  and ';
+    document.getElementById('mss').innerHTML = 'hello '+y.value+' do you know ';
     }
     function invalidID(){
 
-        var x = document.getElementById('invalid').innerHTML ="Sorry "+y.value+ 
-        " you entered an Invalid ID no. :"+num.value;
+        var x = document.getElementById('invalid').innerHTML 
+        ="Sorry "+y.value+ " you entered an Invalid ID no. :"+num.value;
     }
-    
+   
     function deterMin(){
         var thu = id1.includes(num.value);
                 if(thu === true){
-            btn1.addEventListener('click',changeDisplay);
-            btn1.addEventListener('click',read);
+            changeDisplay0();
+            read();
         }else{
-            changeDisplay();
+            changeDisplay1();
             invalidID();
-            alert(num);
-
         }
+    }
+    function goBack(){
+        changeDisplay2(); 
+      }
+    function rfsh(){
+        read();
+    }
+    function logIn(){
+        document.getElementById('container1').style.display='flex';
+        document.getElementById('container2').style.display='none';
+        document.getElementById('container3').style.display='none';
+        document.getElementById('container4').style.display='none';
+    }
+    function homePage(){
+        document.getElementById('container1').style.display='none';
+        document.getElementById('container2').style.display='flex';
+        document.getElementById('container3').style.display='none';
+        document.getElementById('container4').style.display='none';
+    }
+    function play(){
+        document.getElementById('container1').style.display='none';
+        document.getElementById('container2').style.display='none';
+        document.getElementById('container3').style.display='flex';
+        document.getElementById('container4').style.display='none';
+    }  
+    function inva(){
+        document.getElementById('container1').style.display='none';
+        document.getElementById('container2').style.display='none';
+        document.getElementById('container3').style.display='none';
+        document.getElementById('container4').style.display='flex';
+    }
+
+    function add(){
+        x++;
+        document.getElementById('quantity').innerHTML = x;
+    }
+    function less(){
+        if (x != 0) {
+            x--;
+        document.getElementById('quantity').innerHTML = x;
+        }
+        
     }
 </script>
 </body>
